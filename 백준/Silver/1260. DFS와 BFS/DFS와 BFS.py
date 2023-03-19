@@ -1,5 +1,6 @@
 from collections import deque
-
+import sys
+input=sys.stdin.readline
 
 def dfs(graph, v, visited):
     if visited[v] == False:  # 방문한적 없는 노드 방문하면 정렬해주기
