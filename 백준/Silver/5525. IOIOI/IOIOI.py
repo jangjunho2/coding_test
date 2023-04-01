@@ -3,18 +3,21 @@ def setPn(n):
     return Pn
 
 
+def check(Pn, s):
+    count = 0
+    for i in range(len(s)-len(Pn)+1):
+        if s[i:i+len(Pn)] == Pn:
+            count += 1
+    return count
+
+
 n = int(input())
 m = int(input())
 s = input()
 
 
 Pn = setPn(n)
-lst = [s[i:i+len(Pn)] for i in range(m-len(Pn)+1)]
 
-count = 0
 
-for i in lst:
-    if i == Pn:
-        count += 1
-
-print(count)
+result = check(Pn, s)
+print(result)
