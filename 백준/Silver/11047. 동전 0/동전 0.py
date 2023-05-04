@@ -1,15 +1,13 @@
 # 그뤼뒤
 import sys
 
-n, k = list(map(int, sys.stdin.readline().rstrip().split()))
+n, k = list(map(int, sys.stdin.readline().split()))
 
-coins = [int(sys.stdin.readline().rstrip()) for i in range(n)]
-
-coins.reverse()
+coins = [int(sys.stdin.readline()) for i in range(n)]
 
 result = 0
 
-for coin in coins:
+for coin in coins[::-1]:
     result += k//coin
     k %= coin
 
